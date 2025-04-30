@@ -26,7 +26,7 @@ import com.linkedin.backend.features.authentication.service.AuthenticationServic
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/v1/authentication")
+@RequestMapping("/api/v1/authentication")  //request mapping
 public class AuthenticationController {
     private final AuthenticationService authenticationUserService;
 
