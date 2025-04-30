@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Set;
 
 @RestController
-@RequestMapping("/api/v1/feed")
+@RequestMapping("/api/v1/feed") //version1
 public class FeedController {
     private final FeedService feedService;
 
