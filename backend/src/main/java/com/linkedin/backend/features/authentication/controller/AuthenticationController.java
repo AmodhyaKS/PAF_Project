@@ -44,7 +44,7 @@ public class AuthenticationController {
         return authenticationUserService.googleLoginOrSignup(oauth2RequestBody.code(), oauth2RequestBody.page());
     }
 
-    @PostMapping("/register")
+    @PostMapping("/register") // register
     public AuthenticationResponseBody registerPage(@Valid @RequestBody AuthenticationRequestBody registerRequestBody) {
         return authenticationUserService.register(registerRequestBody);
     }
