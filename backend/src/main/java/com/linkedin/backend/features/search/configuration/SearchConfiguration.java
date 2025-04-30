@@ -11,7 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-@Configuration
+@Configuration       //configaration
 public class SearchConfiguration {
 
     private static final String LUCENE_INDEX_DIR = "./lucene/indexes";
