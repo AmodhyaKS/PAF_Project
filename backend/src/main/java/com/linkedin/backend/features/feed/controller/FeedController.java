@@ -97,9 +97,7 @@ public class FeedController {
     }
 
     @GetMapping("/posts/{postId}/likes")
-    public ResponseEntity<Set<User>> getPostLikes(@PathVariable Long postId) {
-        Set<User> likes = feedService.getPostLikes(postId);
-        return ResponseEntity.ok(likes);
+    
     }
 
     @GetMapping("/posts/user/{userId}")
