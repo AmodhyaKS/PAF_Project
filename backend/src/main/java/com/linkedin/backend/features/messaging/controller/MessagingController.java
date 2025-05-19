@@ -1,12 +1,5 @@
 package com.linkedin.backend.features.messaging.controller;
 
-import com.linkedin.backend.dto.Response;
-import com.linkedin.backend.features.authentication.model.User;
-import com.linkedin.backend.features.messaging.dto.MessageDto;
-import com.linkedin.backend.features.messaging.model.Conversation;
-import com.linkedin.backend.features.messaging.model.Message;
-import com.linkedin.backend.features.messaging.service.MessagingService;
-import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
