@@ -15,7 +15,7 @@ import org.springframework.web.servlet.resource.NoResourceFoundException;
 import java.nio.file.NoSuchFileException;
 import java.util.Map;
 
-@ControllerAdvice
+@ControllerAdvice //controller
 @RestController
 @RequestMapping("/api/v1")
 public class BackendController {
