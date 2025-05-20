@@ -73,7 +73,8 @@ public class FeedController {
     @GetMapping("/posts/{postId}/comments")
     public ResponseEntity<List<Comment>> getComments(@PathVariable Long postId) {
         List<Comment> comments = feedService.getPostComments(postId);
-       
+        return ResponseEntity.ok(comments);
+    }
 
     @DeleteMapping("/comments/{commentId}")
     public ResponseEntity<Response> deleteComment(@PathVariable Long commentId,
