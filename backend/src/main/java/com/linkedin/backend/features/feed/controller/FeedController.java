@@ -66,7 +66,7 @@ public class FeedController {
     @PostMapping("/posts/{postId}/comments")
     public ResponseEntity<Comment> addComment(@PathVariable Long postId, @RequestBody CommentDto commentDto,
                                               @RequestAttribute("authenticatedUser") User user) {
-        Comment comment = feedService.addComment(postId, user.getId(), commentDto.getContent());
+        Comment comment = feedService.addComment(postId, user. commentDto.getContent());
         return ResponseEntity.ok(comment);
     }
 
