@@ -73,8 +73,7 @@ public class FeedController {
     @GetMapping("/posts/{postId}/comments")
     public ResponseEntity<List<Comment>> getComments(@PathVariable Long postId) {
         List<Comment> comments = feedService.getPostComments(postId);
-        return ResponseEntity.ok(comments);
-    }
+       
 
     @DeleteMapping("/comments/{commentId}")
     public ResponseEntity<Response> deleteComment(@PathVariable Long commentId,
@@ -96,7 +95,11 @@ public class FeedController {
         return ResponseEntity.ok(post);
     }
 
- 
+    @GetMapping("/posts/{postId}/likes")
+    public ResponseEntity<Set<User>> getPostLikes(@PathVariable Long postId) {
+        Set<User> likes = feedService.getPostLikes(postId);
+        return ResponseEntity.ok(likes);
+    }
 
     @GetMapping("/posts/user/{userId}")
     public ResponseEntity<List<Post>> getPostsByUserId(@PathVariable Long userId) {
