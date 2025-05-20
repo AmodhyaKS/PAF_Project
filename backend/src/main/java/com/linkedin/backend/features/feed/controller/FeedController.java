@@ -18,6 +18,7 @@ import java.util.Set;
 public class FeedController {
     private final FeedService feedService;
 
+     // Constructor injection of FeedService
     public FeedController(FeedService feedService) {
         this.feedService = feedService;
     }
@@ -42,7 +43,7 @@ public class FeedController {
         return ResponseEntity.ok(post);
     }
 
-    @GetMapping("/posts/{postId}") //post adding
+    @GetMapping("/posts/{postId}") 
     public ResponseEntity<Post> getPost(@PathVariable Long postId) {
         Post post = feedService.getPost(postId);
         return ResponseEntity.ok(post);
@@ -56,7 +57,7 @@ public class FeedController {
         return ResponseEntity.ok(post);
     }
 
-    @DeleteMapping("/posts/{postId}") //deleting
+    @DeleteMapping("/posts/{postId}") 
     public ResponseEntity<Response> deletePost(@PathVariable Long postId,
                                                @RequestAttribute("authenticatedUser") User user) {
         feedService.deletePost(postId, user.getId());
@@ -76,7 +77,7 @@ public class FeedController {
         return ResponseEntity.ok(comments);
     }
 
-    @DeleteMapping("/comments/{commentId}") //comments
+    @DeleteMapping("/comments/{commentId}") 
     public ResponseEntity<Response> deleteComment(@PathVariable Long commentId,
                                                   @RequestAttribute("authenticatedUser") User user) {
         feedService.deleteComment(commentId, user.getId());
