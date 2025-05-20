@@ -22,7 +22,7 @@ public class FeedController {
     public FeedController(FeedService feedService) {
         this.feedService = feedService;
     }
-
+     // Get feed posts for the authenticated user
     @GetMapping
     public ResponseEntity<List<Post>> getFeedPosts(@RequestAttribute("authenticatedUser") User user) {
         List<Post> posts = feedService.getFeedPosts(user.getId());
