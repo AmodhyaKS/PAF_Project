@@ -102,7 +102,7 @@ public class FeedController {
         Set<User> likes = feedService.getPostLikes(postId);
         return ResponseEntity.ok(likes);
     }
-
+// Get all posts by a specific user (could be public profile)
     @GetMapping("/posts/user/{userId}")
     public ResponseEntity<List<Post>> getPostsByUserId(@PathVariable Long userId) {
         List<Post> posts = feedService.getPostsByUserId(userId);
