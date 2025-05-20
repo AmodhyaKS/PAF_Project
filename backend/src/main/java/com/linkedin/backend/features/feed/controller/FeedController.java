@@ -56,7 +56,7 @@ public class FeedController {
         Post post = feedService.editPost(postId, user.getId(), picture, content);
         return ResponseEntity.ok(post);
     }
-
+      // Delete a post by the owner
     @DeleteMapping("/posts/{postId}") 
     public ResponseEntity<Response> deletePost(@PathVariable Long postId,
                                                @RequestAttribute("authenticatedUser") User user) {
