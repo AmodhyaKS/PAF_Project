@@ -44,6 +44,7 @@ public class ConnectionController {
           return connectionService.rejectOrCancelConnection(recipient, id);
     }
 
+    
     @PutMapping("/connections/{id}/seen")
     public Connection markConnectionAsSeen(@RequestAttribute("authenticatedUser") User user, @PathVariable Long id) {
         return connectionService.markConnectionAsSeen(user, id);
