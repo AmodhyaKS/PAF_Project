@@ -70,7 +70,7 @@ public class FeedController {
         Comment comment = feedService.addComment(postId, user.getId(), commentDto.getContent());
         return ResponseEntity.ok(comment);
     }
-
+   // Get all comments for a specific post
     @GetMapping("/posts/{postId}/comments")
     public ResponseEntity<List<Comment>> getComments(@PathVariable Long postId) {
         List<Comment> comments = feedService.getPostComments(postId);
