@@ -101,7 +101,7 @@ public class AuthenticationController {
                 firstName, lastName, company, position, location, about);
     }
 
-    @PutMapping("/profile/{id}/profile-picture") // update profile
+    @PutMapping("/profile/{id}/profile-picture")
     public User updateProfilePicture(
             @RequestAttribute("authenticatedUser") User user,
             @PathVariable Long id,

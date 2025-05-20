@@ -7,7 +7,7 @@ services:
       MYSQL_DATABASE: linkedin
       MYSQL_ROOT_PASSWORD: root
     ports:
-      - '3306:3307'
+      - '3306:3306'
   mailhog:
     image: mailhog/mailhog:v1.0.1
     ports:

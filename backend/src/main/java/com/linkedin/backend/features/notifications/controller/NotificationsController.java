@@ -22,7 +22,7 @@ public class NotificationsController {
         this.notificationService = notificationService;
     }
 
-    @GetMapping //get notification
+    @GetMapping
     public List<Notification> getUserNotifications(@RequestAttribute("authenticatedUser") User user) {
         return notificationService.getUserNotifications(user);
     }
