@@ -54,7 +54,10 @@ public class ConnectionController {
     public Connection markConnectionAsSeen(@RequestAttribute("authenticatedUser") User user, @PathVariable Long id) {
         return connectionService.markConnectionAsSeen(user, id);
     }
-
+ /**
+     * Get a list of suggested users to connect with (e.g., "People you may know").
+     * Default limit is 6 suggestions.
+     */
     @GetMapping("/suggestions")
     public List<User> getConnectionSuggestions(@RequestAttribute("authenticatedUser") User user, @RequestParam(required = false, defaultValue = "6") Integer limit) {
         return connectionService.getRecommendations(user.getId(), limit);
