@@ -13,7 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 import java.util.Set;
 
-@RestController
+
 @RequestMapping("/api/v1/feed")
 public class FeedController {
     private final FeedService feedService;
