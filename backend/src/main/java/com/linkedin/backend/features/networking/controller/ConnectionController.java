@@ -41,7 +41,7 @@ public class ConnectionController {
 
     @DeleteMapping("/connections/{id}")
     public Connection rejectOrCancelConnection(@RequestAttribute("authenticatedUser") User recipient, @PathVariable Long id) {
-         return connectionService.rejectOrCancelConnection(recipient, id);
+          return connectionService.rejectOrCancelConnection(recipient, id);
     }
 
     @PutMapping("/connections/{id}/seen")
