@@ -83,20 +83,20 @@ public class FeedController {
         feedService.deleteComment(commentId, user.getId());
         return ResponseEntity.ok(new Response("Comment deleted successfully."));
     }
-
+// Edit a comment by the author
     @PutMapping("/comments/{commentId}")
     public ResponseEntity<Comment> editComment(@PathVariable Long commentId, @RequestBody CommentDto commentDto,
                                                @RequestAttribute("authenticatedUser") User user) {
         Comment comment = feedService.editComment(commentId, user.getId(), commentDto.getContent());
         return ResponseEntity.ok(comment);
     }
-
+ // Like or unlike a post (toggle behavior likely in service layer)
     @PutMapping("/posts/{postId}/like")
     public ResponseEntity<Post> likePost(@PathVariable Long postId, @RequestAttribute("authenticatedUser") User user) {
         Post post = feedService.likePost(postId, user.getId());
         return ResponseEntity.ok(post);
     }
-
+// Get all users who liked a post
     @GetMapping("/posts/{postId}/likes")
     public ResponseEntity<Set<User>> getPostLikes(@PathVariable Long postId) {
         Set<User> likes = feedService.getPostLikes(postId);
