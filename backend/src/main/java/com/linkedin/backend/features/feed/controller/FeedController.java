@@ -48,7 +48,7 @@ public class FeedController {
         Post post = feedService.getPost(postId);
         return ResponseEntity.ok(post);
     }
-
+     // Edit an existing post by the owner
     @PutMapping("/posts/{postId}")
     public ResponseEntity<Post> editPost(@PathVariable Long postId, @RequestParam(value = "picture", required = false) MultipartFile picture,
                                          @RequestParam("content") String content,
