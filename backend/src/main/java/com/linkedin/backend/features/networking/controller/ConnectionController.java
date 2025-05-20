@@ -46,7 +46,9 @@ public class ConnectionController {
     public Connection rejectOrCancelConnection(@RequestAttribute("authenticatedUser") User recipient, @PathVariable Long id) {
           return connectionService.rejectOrCancelConnection(recipient, id);
     }
-
+  /**
+     * Mark a connection as 'seen' — helpful for managing notifications.
+     */
 
     @PutMapping("/connections/{id}/seen")
     public Connection markConnectionAsSeen(@RequestAttribute("authenticatedUser") User user, @PathVariable Long id) {
