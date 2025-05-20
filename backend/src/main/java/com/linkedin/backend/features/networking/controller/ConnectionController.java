@@ -1,3 +1,4 @@
+// Package and imports
 package com.linkedin.backend.features.networking.controller;
 
 import com.linkedin.backend.features.authentication.model.User;
