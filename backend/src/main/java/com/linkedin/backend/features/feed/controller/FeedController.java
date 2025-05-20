@@ -42,7 +42,7 @@ public class FeedController {
         return ResponseEntity.ok(post);
     }
 
-    @GetMapping("/posts/{postId}")
+    @GetMapping("/posts/{postId}") //post adding
     public ResponseEntity<Post> getPost(@PathVariable Long postId) {
         Post post = feedService.getPost(postId);
         return ResponseEntity.ok(post);
