@@ -28,7 +28,7 @@ public class FeedController {
         List<Post> posts = feedService.getFeedPosts(user.getId());
         return ResponseEntity.ok(posts);
     }
-
+    // Get all posts (possibly for admin or exploration feed)
     @GetMapping("/posts")
     public ResponseEntity<List<Post>> getAllPosts() {
         List<Post> posts = feedService.getAllPosts();
