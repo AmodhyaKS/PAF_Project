@@ -56,7 +56,7 @@ public class FeedController {
         return ResponseEntity.ok(post);
     }
 
-    @DeleteMapping("/posts/{postId}")
+    @DeleteMapping("/posts/{postId}") //deleting
     public ResponseEntity<Response> deletePost(@PathVariable Long postId,
                                                @RequestAttribute("authenticatedUser") User user) {
         feedService.deletePost(postId, user.getId());
