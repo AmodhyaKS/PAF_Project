@@ -38,13 +38,16 @@ public class ConnectionController {
     public Connection acceptConnectionRequest(@RequestAttribute("authenticatedUser") User recipient, @PathVariable Long id) {
          return connectionService.acceptConnectionRequest(recipient, id);
     }
-
+  /**
+     * Reject or cancel a connection request.
+     * This can be used by either sender (to cancel) or recipient (to reject).
+     */
     @DeleteMapping("/connections/{id}")
     public Connection rejectOrCancelConnection(@RequestAttribute("authenticatedUser") User recipient, @PathVariable Long id) {
           return connectionService.rejectOrCancelConnection(recipient, id);
     }
 
-    
+
     @PutMapping("/connections/{id}/seen")
     public Connection markConnectionAsSeen(@RequestAttribute("authenticatedUser") User user, @PathVariable Long id) {
         return connectionService.markConnectionAsSeen(user, id);
