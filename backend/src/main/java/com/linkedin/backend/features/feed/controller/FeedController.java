@@ -42,7 +42,7 @@ public class FeedController {
         Post post = feedService.createPost(picture, content, user.getId());
         return ResponseEntity.ok(post);
     }
-
+    // Get a specific post by ID
     @GetMapping("/posts/{postId}") 
     public ResponseEntity<Post> getPost(@PathVariable Long postId) {
         Post post = feedService.getPost(postId);
