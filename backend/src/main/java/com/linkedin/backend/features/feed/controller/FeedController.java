@@ -76,7 +76,7 @@ public class FeedController {
         return ResponseEntity.ok(comments);
     }
 
-    @DeleteMapping("/comments/{commentId}")
+    @DeleteMapping("/comments/{commentId}") //comments
     public ResponseEntity<Response> deleteComment(@PathVariable Long commentId,
                                                   @RequestAttribute("authenticatedUser") User user) {
         feedService.deleteComment(commentId, user.getId());
