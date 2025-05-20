@@ -30,7 +30,10 @@ public class ConnectionController {
     public Connection sendConnectionRequest(@RequestAttribute("authenticatedUser") User sender, @RequestParam Long recipientId) {
         return connectionService.sendConnectionRequest(sender, recipientId);
     }
-
+ /**
+     * Accept a connection request by its ID.
+     * Only the recipient of the request can accept it.
+     */
     @PutMapping("/connections/{id}")
     public Connection acceptConnectionRequest(@RequestAttribute("authenticatedUser") User recipient, @PathVariable Long id) {
          return connectionService.acceptConnectionRequest(recipient, id);
