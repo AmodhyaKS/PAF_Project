@@ -63,7 +63,7 @@ public class FeedController {
         feedService.deletePost(postId, user.getId());
         return ResponseEntity.ok(new Response("Post deleted successfully."));
     }
-
+     // Add a comment to a post
     @PostMapping("/posts/{postId}/comments")
     public ResponseEntity<Comment> addComment(@PathVariable Long postId, @RequestBody CommentDto commentDto,
                                               @RequestAttribute("authenticatedUser") User user) {
