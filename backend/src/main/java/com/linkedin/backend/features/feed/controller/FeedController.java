@@ -76,7 +76,7 @@ public class FeedController {
         List<Comment> comments = feedService.getPostComments(postId);
         return ResponseEntity.ok(comments);
     }
-
+     // Delete a comment by the author
     @DeleteMapping("/comments/{commentId}") 
     public ResponseEntity<Response> deleteComment(@PathVariable Long commentId,
                                                   @RequestAttribute("authenticatedUser") User user) {
