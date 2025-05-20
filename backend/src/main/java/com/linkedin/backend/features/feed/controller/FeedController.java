@@ -34,7 +34,7 @@ public class FeedController {
         List<Post> posts = feedService.getAllPosts();
         return ResponseEntity.ok(posts);
     }
-
+    // Create a new post with optional image
     @PostMapping("/posts")
     public ResponseEntity<Post> createPost(@RequestParam(value = "picture", required = false) MultipartFile picture,
                                            @RequestParam("content") String content,
